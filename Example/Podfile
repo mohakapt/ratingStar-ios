@@ -2,10 +2,4 @@ use_frameworks!
 
 target 'RatingStar_Example' do
   pod 'RatingStar', :path => '../'
-
-  target 'RatingStar_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
