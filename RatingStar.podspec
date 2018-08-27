@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RatingStar'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'A nice-looking new concept for rating bars implemented for iOS.'
 
   s.description      = <<-DESC

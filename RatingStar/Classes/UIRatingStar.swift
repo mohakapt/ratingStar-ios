@@ -43,6 +43,20 @@ public class UIRatingStar: UIView {
         }
     }
 
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        initSpaces()
+        initPetals()
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        initSpaces()
+        initPetals()
+    }
+
     private func updateColors() {
         guard petals.count != 0 else { return }
 
@@ -59,9 +73,7 @@ public class UIRatingStar: UIView {
         }
     }
 
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-
+    func initSpaces() {
         let height = bounds.height
         let width = bounds.width
         let length = width >= height ? height : width
@@ -74,8 +86,6 @@ public class UIRatingStar: UIView {
 
         let textSide = petalSide / 3
         textCanvas = CGRect(x: bounds.midX - textSide / 2, y: canvas.origin.y + textSide * 1.3, width: textSide, height: textSide)
-
-        initPetals()
     }
 
     func initPetals() {
