@@ -26,4 +26,4 @@ mohakapt@gmail.com, mohakapt@gmail.com
 
 ## License
 
-RatingStar is available under the MIT license. See the LICENSE file for more info.
+RatingStar is available under the Apache-2.0 license. See the LICENSE file for more info.
