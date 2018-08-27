@@ -10,6 +10,7 @@ import UIKit
 import RatingStar
 
 class ViewController: UIViewController {
+    @IBOutlet weak var ratingStar: UIRatingStar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +32,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func showNumbersDidChange(_ sender: Any) {
+        let showNumbersSwitch = sender as! UISwitch
+        ratingStar.showNumbers = showNumbersSwitch.isOn
+    }
 }
 

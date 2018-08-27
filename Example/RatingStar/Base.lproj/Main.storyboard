@@ -32,16 +32,26 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showNumbers" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZrK-du-fUq">
+                                <rect key="frame" x="163" y="118" width="51" height="31"/>
+                                <connections>
+                                    <action selector="showNumbersDidChange:" destination="vXZ-lx-hvc" eventType="valueChanged" id="7Pg-pG-IWz"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="nrZ-AK-qlQ" firstAttribute="top" secondItem="ZrK-du-fUq" secondAttribute="bottom" constant="84.5" id="H2r-D3-cIJ"/>
+                            <constraint firstItem="ZrK-du-fUq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="RbG-RJ-qHu"/>
                             <constraint firstItem="nrZ-AK-qlQ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="hsP-6r-kqZ"/>
                             <constraint firstItem="nrZ-AK-qlQ" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="vHX-uz-3SK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ratingStar" destination="nrZ-AK-qlQ" id="e7J-hj-m8o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
