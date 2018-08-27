@@ -11,8 +11,7 @@ The concept looks like a flower with every petal representing a specific rating.
 *The idea of this project is originally inspired by this [concept](https://goo.gl/Yn2CCh).*
 <br/><br/>
 
-![Example](https://raw.githubusercontent.com/mohakapt/ratingstar-ios/master/images/star.gif)
-
+![Example](https://raw.githubusercontent.com/mohakapt/ratingStar-ios/master/Images/star.gif)
 
 ### Installation
 RatingStar is available through [CocoaPods](https://cocoapods.org). To install
