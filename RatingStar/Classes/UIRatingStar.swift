@@ -1,5 +1,5 @@
 //
-//  RatingStarsView.swift
+//  UIRatingStar.swift
 //  Smares
 //
 //  Created by Haytham Katby on 28/7/17.
@@ -8,30 +8,36 @@
 
 import UIKit
 
-public protocol UIRatingViewDelegate {
+public protocol UIRatingStarDelegate {
     func ratingChanged(newValue: Int)
 }
 
-public class UIRatingView: UIView {
+public class UIRatingStar: UIView {
     private var canvas: CGRect! // The main square - used to draw the star
     private var petalCanvas: CGRect! // The inner square - used to draw the 5th petal of the star
     private var textCanvas: CGRect! // The text square - used to draw the numbers on the petals
     private var spacing: CGFloat! // The value of the space between the petals of the star
     private var petals = [CAShapeLayer]()
+    private var numbers = [CATextLayer]()
 
-    public var delegate: UIRatingViewDelegate?
+    public var delegate: UIRatingStarDelegate?
 
     @IBInspectable public var value: Int = 0 {
         didSet {
             updateColors()
         }
     }
-    @IBInspectable public var selectedColor: UIColor = UIColor(red: 1, green: 175 / 255, blue: 0, alpha: 1) {
+    @IBInspectable public var starColor: UIColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1) {
         didSet {
             updateColors()
         }
     }
-    @IBInspectable public var unselectedColor: UIColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1) {
+    @IBInspectable public var selectionColor: UIColor = UIColor(red: 1, green: 175 / 255, blue: 0, alpha: 1) {
+        didSet {
+            updateColors()
+        }
+    }
+    @IBInspectable public var showNumbers: Bool = true {
         didSet {
             updateColors()
         }
@@ -41,11 +47,15 @@ public class UIRatingView: UIView {
         guard petals.count != 0 else { return }
 
         for index in value..<petals.count {
-            petals[index].fillColor = unselectedColor.cgColor
+            petals[index].fillColor = starColor.cgColor
         }
 
         for index in 0..<value {
-            petals[index].fillColor = selectedColor.cgColor
+            petals[index].fillColor = selectionColor.cgColor
+        }
+
+        for number in numbers {
+            number.isHidden = !showNumbers
         }
     }
 
@@ -83,6 +93,7 @@ public class UIRatingView: UIView {
 
             let number = textLayer(String(index), in: textCanvas)
             rotate(layer: number, to: angle, distance: distance)
+            numbers.append(number)
 
             self.layer.addSublayer(petal)
             self.layer.addSublayer(number)

@@ -15,10 +15,10 @@ Pod::Spec.new do |s|
 A nice-looking new concept for rating bars implemented for iOS. The concept looks like a flower with every petal representing a specific rating.
                        DESC
   s.homepage         = 'https://github.com/mohakapt/ratingStar-ios'
-  # s.screenshots      = 'https://raw.githubusercontent.com/mohakapt/ratingStar-ios/master/images/screenshot.jpg'
+  s.screenshots      = 'https://raw.githubusercontent.com/mohakapt/ratingstar-ios/master/images/screenshot.jpg'
   s.license          = { :type => 'Apache-2.0', :file => 'LICENSE' }
   s.author           = { 'Haytham KATBY' => 'mohakapt@gmail.com' }
-  s.source           = { :git => 'https://github.com/mohakapt/ratingStar-ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/mohakapt/ratingstar-ios.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/mo_ha_ka'
 
   s.swift_version = '4.0'
